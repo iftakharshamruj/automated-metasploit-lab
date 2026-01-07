@@ -1,9 +1,3 @@
-# Session notes
-
-Use this file to record details about successful exploits and shells.
-
-## Example
-
 Date: 2026.01.07
 Target: 192.168.253.129
 
