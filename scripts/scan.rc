@@ -1,0 +1,13 @@
+# scripts/scan.rc
+# Purpose: run an Nmap scan through Metasploit, store results in the Metasploit database,
+# and list discovered services and potential vulnerabilities.
+
+# Nmap scan through Metasploit's db
+db_nmap -sV 192.168.253.129
+
+# List discovered services from the database
+services
+
+# List known vulnerabilities mapped to those services (if available)
+vulns
+

