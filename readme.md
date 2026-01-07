@@ -28,14 +28,14 @@ This is designed as a learning project and for portfolio demonstration only. All
 
 Example IPs:
 
-- Kali: 192.168.217.128
-- Metasploitable2: 192.168.217.129
+- Kali: 192.168.253.128
+- Metasploitable2: 192.168.253.129
 
 ## Basic connectivity test
 
 From Kali:
 
 ```bash
-ping -c 4 192.168.217.129
+ping -c 4 192.168.253.129
 
 
